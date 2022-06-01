@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+    {{ super() }}
+
+    <style>
+        table, tr {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    {% if empty_directory %}
+        <p>Leer...</p>
+    {% endif %}
+
+    <table>
+    {% for file in files %}
+    <tr>
+        <td><a href="{{path}}/{{file.path}}">{{file.path}}</a></td>
+        <td>{{ file.size }} Bytes</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

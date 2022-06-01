@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+    {{ super() }}
+	<script type="module" src="https://md-block.verou.me/md-block.js"></script>
+	<link href="https://unpkg.com/prismjs@v1.x/themes/prism.css" rel="stylesheet" />
+	<script src="https://unpkg.com/prismjs@v1.x/components/prism-core.min.js"></script>
+	<script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+{% endblock %}
+
+{% block body %}
+
+	<!-- <md-block>{{ content }}</md-block> -->
+	{{ content|safe }}
+
+{% endblock %}
